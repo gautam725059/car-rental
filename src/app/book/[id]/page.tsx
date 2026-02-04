@@ -197,7 +197,7 @@ export default function BookingPage() {
                                             <input
                                                 type="text"
                                                 name="firstName"
-                                                placeholder="John"
+                                                placeholder="Ram"
                                                 required
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-primary outline-none"
                                             />
@@ -217,7 +217,7 @@ export default function BookingPage() {
                                             <input
                                                 type="email"
                                                 name="email"
-                                                placeholder="john@example.com"
+                                                placeholder="email@example.com"
                                                 required
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-primary outline-none"
                                             />
@@ -227,7 +227,7 @@ export default function BookingPage() {
                                             <input
                                                 type="tel"
                                                 name="phone"
-                                                placeholder="+1 (555) 000-0000"
+                                                placeholder="7369954206"
                                                 required
                                                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-primary outline-none"
                                             />
