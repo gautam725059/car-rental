@@ -63,8 +63,22 @@ export default function BookingPage() {
 
     const handleConfirm = (e: React.FormEvent) => {
         e.preventDefault();
-        alert(`Booking Confirmed for ${car.name}!\nTotal: $${totalPrice}`);
-        router.push('/');
+
+        const message = `*New Booking Request*%0A%0A*Car:* ${car.name}%0A*Price:* $${totalPrice}%0A*Dates:* ${formData.pickupDate} to ${formData.dropoffDate}%0A*Location:* ${formData.location}%0A%0A*Customer Details:*%0AName: ${formData.firstName} ${formData.lastName}%0AEmail: ${formData.email}%0APhone: ${formData.phone}`;
+
+        // WhatsApp URL (using a dummy business number)
+        const whatsappUrl = `https://wa.me/15551234567?text=${message}`;
+
+        // Email URL
+        const emailUrl = `mailto:reservations@luxeride.com?subject=Booking Request: ${car.name}&body=${message.replace(/%0A/g, '%0D%0A')}`;
+
+        if (confirm("Would you like to send your booking request via WhatsApp?\n\nClick 'OK' for WhatsApp, or 'Cancel' to open your Email client.")) {
+            window.open(whatsappUrl, '_blank');
+        } else {
+            window.open(emailUrl, '_blank');
+        }
+
+        // router.push('/'); 
     };
 
     return (
