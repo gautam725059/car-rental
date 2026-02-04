@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { Suspense } from "react";
 import { Hero } from "@/components/Hero";
 import { BookingSection } from "@/components/BookingSection";
 import { FeaturedCars } from "@/components/FeaturedCars";
@@ -11,7 +12,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <BookingSection />
-      <FeaturedCars />
+      <Suspense fallback={<div className="container mx-auto px-4 py-24 text-center text-white">Loading featured cars...</div>}>
+        <FeaturedCars />
+      </Suspense>
 
       {/* Simple Why Choose Us Section */}
       <section className="py-24 bg-surface border-y border-white/5">
